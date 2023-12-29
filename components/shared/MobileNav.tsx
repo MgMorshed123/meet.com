@@ -1,4 +1,5 @@
 import React from 'react'
+import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
 import {
     Sheet,
@@ -8,6 +9,7 @@ import {
     SheetTitle,
     SheetTrigger,
   } from "@/components/ui/sheet"
+import NavItems from './NavItems'
 // import Image from 'next/image'
   
 const MobileNav = () => {
@@ -25,17 +27,18 @@ const MobileNav = () => {
     height={23}
     className='cursor-pointer'
     />   
-
-
+    
     </SheetTrigger>
-    <SheetContent>
-      <SheetHeader>
-        <SheetTitle>Are you sure absolutely sure?</SheetTitle>
-        <SheetDescription>
-          This action cannot be undone. This will permanently delete your account
-          and remove your data from our servers.
-        </SheetDescription>
-      </SheetHeader>
+    <SheetContent className='flex flex-col bg-white md:hidden'>
+   
+   <Image
+      src='/assets/images/logo.svg'
+      alt='logo'
+      width={128}
+      height={38}
+   />
+  <Separator  className='border border-black'/>
+  <NavItems></NavItems>
     </SheetContent>
   </Sheet>
   </div>
